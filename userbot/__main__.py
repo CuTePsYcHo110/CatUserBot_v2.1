@@ -48,9 +48,9 @@ async def startup_process():
     await load_plugins("plugins")
     await load_plugins("assistant")
     print("➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
-    print("Yay your userbot is officially working.!!!")
+    print("Yay your userbot is officially working!!!")
     print(
-        f"Congratulation, now type {cmdhr}alive to see message if catub is alive"
+        f"Congratulation, now type {cmdhr}alive to see message if UB is alive"
     )
     print("➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
     await verifyLoggerGroup()
