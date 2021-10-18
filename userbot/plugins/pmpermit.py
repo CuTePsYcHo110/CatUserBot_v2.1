@@ -121,13 +121,13 @@ async def do_pm_permit_action(event, chat):  # sourcery no-metrics
     elif gvarstatus("pmmenu") is None:
         USER_BOT_NO_WARN = f"""__Hi__ {mention}__, I haven't approved you yet to personal message me. 
 
-You have {warns}/{totalwarns} warns until you get blocked by the CatUserbot.
+You have {warns}/{totalwarns} warns until you get blocked.
 
 Choose an option from below to specify the reason of your message and wait for me to check it. __⬇️"""
     else:
         USER_BOT_NO_WARN = f"""__Hi__ {mention}__, I haven't approved you yet to personal message me.
 
-You have {warns}/{totalwarns} warns until you get blocked by the CatUserbot.
+You have {warns}/{totalwarns} warns until you get blocked.
 
 Don't spam my inbox. say reason and wait until my response.__"""
     addgvar("pmpermit_text", USER_BOT_NO_WARN)
@@ -232,7 +232,7 @@ async def do_pm_enquire_action(event, chat):
     if str(chat.id) not in PM_WARNS:
         text = """__Hey! Have some patience. My master has not seen your message yet. \
 My master usually responds to people, though idk about some exceptional users.__
-__My master will respond when he/she comes online, if he/she wants to.__
+__My master will respond when she comes online, if she wants to.__
 **Please do not spam unless you wish to be blocked and reported.**"""
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
@@ -281,7 +281,7 @@ async def do_pm_request_action(event, chat):
     if str(chat.id) not in PM_WARNS:
         text = """__Hey have some patience. My master has not seen your message yet. \
 My master usually responds to people, though idk about some exceptional users.__
-__My master will respond when he/she comes back online, if he/she wants to.__
+__My master will respond when she comes back online, if she wants to.__
 **Please do not spam unless you wish to be blocked and reported.**"""
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
@@ -330,7 +330,7 @@ async def do_pm_chat_action(event, chat):
     if str(chat.id) not in PM_WARNS:
         text = """__Heyy! I am busy right now I already asked you to wait know. After my work finishes. \
 We can talk but not right know. Hope you understand.__
-__My master will respond when he/she comes back online, if he/she wants to.__
+__My master will respond when she comes back online, if she wants to.__
 **Please do not spam unless you wish to be blocked and reported.**"""
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
@@ -508,7 +508,7 @@ async def on_plug_in_callback_query_handler(event):
         text = "Idoit this options for user who messages you. not for you"
         return await event.answer(text, cache_time=0, alert=True)
     text = """__Okay. Your request has been registered. Do not spam my master's inbox now. \
-My master is busy right now, When My master comes online he/she will check your message and ping you. \
+My master is busy right now, When My master comes online she will check your message and ping you. \
 Then we can extend this conversation more but not right now.__"""
     sqllist.add_to_list("pmenquire", event.query.user_id)
     try:
@@ -528,8 +528,8 @@ async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
         text = "Idoit this options for user who messages you. not for you"
         return await event.answer(text, cache_time=0, alert=True)
-    text = """__Okay. I have notified my master about this. When he/she comes comes online\
- or when my master is free he/she will look into this chat and will ping you so we can have a friendly chat.__\
+    text = """__Okay. I have notified my master about this. When she comes comes online\
+ or when my master is free she will look into this chat and will ping you so we can have a friendly chat.__\
 
 **But right now please do not spam unless you wish to get blocked.**"""
     sqllist.add_to_list("pmrequest", event.query.user_id)
